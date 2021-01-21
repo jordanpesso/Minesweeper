@@ -8,10 +8,11 @@
 </head>
 <body onload="init()">
     <h1>jordan mine sweeper</h1>
-    <div class="board-container">
+    <div class="board-container"></div>
+        <div class="smiley-container"></div>
         <div class="clock-area">
-            <h2>Clock: </h2> <span>
-                <h2>"timer"</h2>
+            <h2>timer: </h2> <span>
+                <h2 class="timer">00:00</h2>
             </span>
 
         </div>
@@ -21,13 +22,17 @@
             <button onclick="changeLevel(12, 30)">Expert</button>
             <button onclick="showHint()">Get a Hint</button>
         </div>
-        <div class="board">
-        <table>
-            dgdfgdfg
-        </table>
-        <button onclick="initGame()">Try Again</button>
+        <div class="board-matrix">
+            <table border="1">
+                <tbody class="board-game">
+
+
+                </tbody>
+            </table>
+ 
+    <button onclick="init()">Try Again</button>
     </div>
-    <script src="js/utils.js"></script>
-    <script src="js/game.js"></script>   
+    <script src="js/utilis.js"></script>
+    <script src="js/cleangame.js"></script>   
 </body>
 </html>

@@ -18,7 +18,7 @@ table {
         font-weight: bold;
         display: inline-block;
 }
-.td {
+td {
     border: 1px solid goldenrod;
     background-color: rgb(195, 195, 195);
     width: 30px;
@@ -39,4 +39,12 @@ table {
     
     .board td:hover {
         background-color: lightsalmon;
+    }
+
+    .displaynone {
+        background-color: rgb(216, 165, 165);
+    
+    }
+    .displayreavel {
+        background-color: white;
     }
