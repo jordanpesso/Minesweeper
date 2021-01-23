@@ -64,6 +64,33 @@ function changeLevel(size, mines) {
     init();
 }
 
+
+function expandShown(board, cellI, cellJ) {
+    var cell = board[cellI][cellJ]
+    cell.isShown = true;
+    gGame.showCount++;
+    if (cell.minesAroundCount > 0) {
+        cell.content = cell.minesAroundCount;
+    }
+
+    renderCell(cellI, cellJ, cell.content)
+    if (cell.minesAroundCount === 0) {
+        for (var i = cellI-1; i <= cellI+1; i++) {
+            for (var j = cellJ-1; j <= cellJ+1; j++) {
+                if (i === cellI && j === cellJ) continue;
+                if (i < 0 || i >= board.length || j < 0 || j >= board[0].length) continue;
+                if (board[i][j].isShown || board[i][j].isMarked) continue;
+                expandShown(board, i, j);
+            }
+        }
+    }
+
+    gGame.isWin = checkIfWin();
+    if (gGame.isWin) {
+        gameWon();
+    }
+}
+
 // what happend if a cell i clicked
 function cellClicked(cellI, cellJ) {
     if (!gGame.isOn) return;
@@ -82,18 +109,7 @@ function cellClicked(cellI, cellJ) {
         return;
     }
 
-    cell.isShown = true;
-    gGame.showCount++;
-    if (cell.minesAroundCount > 0) {
-        cell.content = cell.minesAroundCount;
-    }
-    renderCell(cellI, cellJ, cell.content)
-    gGame.isWin = checkIfWin();
-    if (gGame.isWin) {
-        gameWon();
-        return;
-    }
-
+    expandShown(gBoard, cellI, cellJ);
 }
 
 function handleFirstClick(cellI,cellJ) {
@@ -205,7 +221,7 @@ function gameOver() {
 
 function renderPicture(imgName) {
     elSmileyContainer = document.querySelector('.smiley-container')
-    elSmileyContainer.innerHTML = `<img src="img/${imgName}" width="60" height="60"/>`;
+    elSmileyContainer.innerHTML = `<img src="img/${imgName}" width="120" height="120"/>`;
 }
 
 function renderMineCount(count) {

@@ -7,32 +7,37 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body onload="init()">
-    <h1>jordan mine sweeper</h1>
-    <div class="board-container"></div>
-        <div class="smiley-container"></div>
-        <div class="clock-area">
-            <h2>timer: </h2> <span>
-                <h2 class="timer">0</h2>
-            </span>
+    <h1>Mine sweeper</h1>
+    <div class="board-container">
+        <h2>be careful!</h2>
+        <div class="data-area">
+            <div class="clock-area">
+                <h2>timer </h2> 
+                <span class="timer"></span>
+            </div>
+            <div class="smiley-container"></div>
+            <div class="mines-count-area">
+                <h2>mines </h2>
+                <span class="mines-count"></span>
+            </div>
 
-        </div>
-        <div class="mines-count-area">
-            <span class="mines-count"></span>
         </div>
         <div class="levels">
             <button onclick="changeLevel(4, 2)">Beginner</button>
             <button onclick="changeLevel(8, 12)">Medium</button>
             <button onclick="changeLevel(12, 30)">Expert</button>
         </div>
-        <div class="board-matrix">
+            <div class="board-matrix">
             <table border="1">
                 <tbody class="board-game">
 
 
                 </tbody>
             </table>
+            </div>
  
     <button onclick="init()">Try Again</button>
+    </div>
     </div>
     <script src="js/utils.js"></script>
     <script src="js/minesweeper.js"></script>   
