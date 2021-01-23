@@ -12,15 +12,17 @@
         <div class="smiley-container"></div>
         <div class="clock-area">
             <h2>timer: </h2> <span>
-                <h2 class="timer">00:00</h2>
+                <h2 class="timer">0</h2>
             </span>
 
+        </div>
+        <div class="mines-count-area">
+            <span class="mines-count"></span>
         </div>
         <div class="levels">
             <button onclick="changeLevel(4, 2)">Beginner</button>
             <button onclick="changeLevel(8, 12)">Medium</button>
             <button onclick="changeLevel(12, 30)">Expert</button>
-            <button onclick="showHint()">Get a Hint</button>
         </div>
         <div class="board-matrix">
             <table border="1">
@@ -32,7 +34,7 @@
  
     <button onclick="init()">Try Again</button>
     </div>
-    <script src="js/utilis.js"></script>
-    <script src="js/cleangame.js"></script>   
+    <script src="js/utils.js"></script>
+    <script src="js/minesweeper.js"></script>   
 </body>
 </html>
