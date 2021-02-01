@@ -1,2 +1,2 @@
-# sprint1
+# mine sweeper
 my first game on github 
